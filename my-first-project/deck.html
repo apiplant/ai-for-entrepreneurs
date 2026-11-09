@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ShelfSense — Pitch Deck</title>
+<style>
+  :root {
+    --bg: #12121a;
+    --fg: #f2f2f5;
+    --muted: #8b8b98;
+    --accent: #4ade80;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    overflow: hidden;
+  }
+  .slide {
+    position: fixed;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8vw;
+  }
+  .slide.active { display: flex; }
+  .kicker {
+    font-size: clamp(14px, 1.4vw, 20px);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3vh;
+  }
+  .kicker .n { color: var(--accent); margin-right: 1em; }
+  h1 { font-size: clamp(48px, 8vw, 120px); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(36px, 5.5vw, 84px); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+  h2 .a, h1 .a { color: var(--accent); }
+  p { font-size: clamp(20px, 2.4vw, 34px); line-height: 1.5; color: var(--muted); max-width: 30em; margin-top: 4vh; }
+  p strong { color: var(--fg); font-weight: 600; }
+  .hint {
+    position: fixed;
+    bottom: 3vh;
+    left: 8vw;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<section class="slide active">
+  <div class="kicker"><span class="n">01</span>ShelfSense</div>
+  <h1>One photo,<br><span class="a">done.</span></h1>
+</section>
+
+<section class="slide">
+  <div class="kicker"><span class="n">02</span>The problem</div>
+  <h2>Counting shelves eats <span class="a">3–4 hours a week.</span></h2>
+  <p>On paper, or from memory. That's how small groceries do inventory today.</p>
+</section>
+
+<section class="slide">
+  <div class="kicker"><span class="n">03</span>The payoff</div>
+  <h1><span class="a">3 hours</span> saved<br>per week.</h1>
+  <p>That's the time every pilot shop gets back from shelf counting, every week.</p>
+</section>
+
+<section class="slide">
+  <div class="kicker"><span class="n">04</span>The customer</div>
+  <h2>Independent grocery stores and minimarkets with <span class="a">1–3 locations.</span></h2>
+</section>
+
+<section class="slide">
+  <div class="kicker"><span class="n">05</span>Validation</div>
+  <h2><span class="a">9 of 14</span> owners in Milan said they'd pay for this.</h2>
+</section>
+
+<section class="slide">
+  <div class="kicker"><span class="n">06</span>The solution</div>
+  <h2>Walk the aisles, take a photo — the app builds the <span class="a">reorder list for each supplier.</span></h2>
+  <p>Photo in, reorder list out. No spreadsheets, no paper.</p>
+</section>
+
+<section class="slide">
+  <div class="kicker"><span class="n">07</span>Why now</div>
+  <h2>Phone cameras + vision AI finally got <span class="a">good and cheap enough</span> to count products from a photo.</h2>
+  <p>This just wasn't possible a couple of years ago.</p>
+</section>
+
+<section class="slide">
+  <div class="kicker"><span class="n">08</span>Traction</div>
+  <h2>Live in <span class="a">3 pilot shops</span> since September.</h2>
+  <p>Each saves about <strong>3 hours a week</strong>.</p>
+</section>
+
+<section class="slide">
+  <div class="kicker"><span class="n">09</span>Business model</div>
+  <h2><span class="a">$29</span> per store, per month.</h2>
+  <p>Free 14-day trial, so owners see it work on their own shelves before paying.</p>
+</section>
+
+<section class="slide">
+  <div class="kicker"><span class="n">10</span>The team</div>
+  <h2>5 years in supermarket supply chain, <span class="a">plus the engineer building it.</span></h2>
+  <p>I've seen this problem from the inside. Luca is the engineer.</p>
+</section>
+
+<div class="hint">← &#8594; to navigate</div>
+
+<script>
+  const slides = document.querySelectorAll(".slide");
+  let i = 0;
+  function show(n) {
+    slides[i].classList.remove("active");
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides[i].classList.add("active");
+  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight" || e.key === "ArrowDown") { e.preventDefault(); show(i + 1); }
+    if (e.key === "ArrowLeft"  || e.key === "ArrowUp")   { e.preventDefault(); show(i - 1); }
+  });
+</script>
+
+</body>
+</html>

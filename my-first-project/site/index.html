@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShelfSense — Count your shelves with a photo, not a clipboard</title>
+  <meta name="description" content="ShelfSense turns a photo of your shelves into a supplier-ready reorder list. Built for independent grocery stores and minimarkets.">
+  <meta property="og:title" content="ShelfSense — Count your shelves with a photo, not a clipboard">
+  <meta property="og:description" content="One photo per aisle. ShelfSense counts what's running low and builds the reorder list for each supplier.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf8f2;
+      --card: #fffefb;
+      --ink: #14231b;
+      --muted: #5f6b60;
+      --line: #e8e3d5;
+      --green: #1e6a44;
+      --green-deep: #0e3b26;
+      --green-tint: #e9f1ea;
+      --gold: #b8913d;
+      --gold-dark: #8a6a24;
+      --gold-tint: #f5eedd;
+      --gold-line: #e5d9b8;
+      --cream: #f6f2e7;
+      --radius: 18px;
+      --shadow: 0 24px 48px -24px rgba(20, 60, 40, 0.28);
+      --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+      --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .eyebrow {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(250, 248, 242, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .site-header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .brand {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.3rem;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .brand span { color: var(--green); }
+    .nav { display: none; }
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+    .nav a:hover { color: var(--ink); }
+    .nav .nav-cta { color: var(--green-deep); font-weight: 700; }
+
+    /* Hero */
+    .hero {
+      padding: 4rem 0 3.5rem;
+      text-align: center;
+      background: radial-gradient(900px 480px at 50% -10%, rgba(30, 106, 68, 0.09), transparent 65%);
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--gold-dark);
+      background: var(--gold-tint);
+      border: 1px solid var(--gold-line);
+      border-radius: 999px;
+      padding: 0.35rem 1rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6.5vw, 4.25rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+      max-width: 17ch;
+      margin: 0 auto;
+    }
+    .hero h1 em { font-style: italic; color: var(--green); }
+    .lede {
+      margin: 1.25rem auto 2rem;
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 34rem;
+    }
+    .btn {
+      display: inline-block;
+      width: 100%;
+      background: var(--green-deep);
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1.02rem;
+      padding: 1rem 1.75rem;
+      border-radius: 999px;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .btn:hover, .btn:focus-visible {
+      background: #0a2e1e;
+      transform: translateY(-1px);
+    }
+    .micro {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    /* Sections */
+    section { padding: 3.5rem 0; }
+    .section-head { text-align: center; margin-bottom: 2.25rem; }
+    h2 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      letter-spacing: -0.015em;
+      line-height: 1.15;
+    }
+    .section-sub {
+      color: var(--muted);
+      max-width: 32rem;
+      margin: 0.6rem auto 0;
+      font-size: 1.02rem;
+    }
+
+    /* Benefits */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .benefit {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.5rem;
+    }
+    .benefit .icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: var(--green-tint);
+      border-radius: 14px;
+      color: var(--green-deep);
+    }
+    .benefit h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin: 1.1rem 0 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    .benefit p { color: var(--muted); font-size: 0.97rem; }
+
+    /* How it works */
+    .steps {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      counter-reset: step;
+    }
+    .step {
+      display: flex;
+      gap: 1.1rem;
+      align-items: flex-start;
+    }
+    .step .num {
+      flex: 0 0 auto;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      background: var(--green-tint);
+      border: 1px solid #d3e3d6;
+      color: var(--green-deep);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 50%;
+    }
+    .step h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin: 0.3rem 0 0.3rem;
+      letter-spacing: -0.01em;
+    }
+    .step p { color: var(--muted); font-size: 0.97rem; }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    .plan {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    .plan h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.35rem;
+      letter-spacing: -0.01em;
+    }
+    .plan-for { color: var(--muted); font-size: 0.9rem; margin-top: 0.2rem; }
+    .price {
+      margin: 1.25rem 0 1.5rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0.3rem;
+    }
+    .price .amount {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 2.6rem;
+      letter-spacing: -0.02em;
+    }
+    .price .per { color: var(--muted); font-size: 0.9rem; }
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.75rem;
+      text-align: left;
+      flex: 1;
+    }
+    .features li {
+      position: relative;
+      padding: 0.3rem 0 0.3rem 1.6rem;
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+    .features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0.1rem;
+      top: 0.3rem;
+      color: var(--green);
+      font-weight: 700;
+    }
+    .plan-btn {
+      width: 100%;
+      background: transparent;
+      color: var(--green-deep);
+      border: 1.5px solid var(--green-deep);
+      box-shadow: none;
+      font-weight: 600;
+    }
+    .plan-btn:hover, .plan-btn:focus-visible {
+      background: var(--green-tint);
+      transform: none;
+    }
+    .plan.popular {
+      background: var(--green-deep);
+      border-color: var(--green-deep);
+      box-shadow: var(--shadow);
+    }
+    .plan.popular h3, .plan.popular .price .amount { color: var(--cream); }
+    .plan.popular .plan-for, .plan.popular .price .per, .plan.popular .features li { color: rgba(246, 242, 231, 0.72); }
+    .plan.popular .features li::before { color: var(--gold); }
+    .popular-badge {
+      position: absolute;
+      top: -0.8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: #241a08;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .plan.popular .plan-btn {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #241a08;
+    }
+    .plan.popular .plan-btn:hover, .plan.popular .plan-btn:focus-visible { background: #a67d2e; }
+    .pricing-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-top: 1.5rem;
+    }
+
+    /* CTA band */
+    .cta-band {
+      background: var(--green-deep);
+      background-image: radial-gradient(600px 300px at 50% 0%, rgba(184, 145, 61, 0.16), transparent 70%);
+      color: var(--cream);
+      border-radius: 28px;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    .cta-band h2 { color: var(--cream); }
+    .cta-band p {
+      color: rgba(246, 242, 231, 0.78);
+      max-width: 30rem;
+      margin: 0.6rem auto 1.75rem;
+    }
+    .cta-band .btn {
+      background: var(--gold);
+      color: #241a08;
+      box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.4);
+    }
+    .cta-band .btn:hover, .cta-band .btn:focus-visible { background: #a67d2e; }
+    .cta-band .micro { color: rgba(246, 242, 231, 0.65); }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 2rem;
+      background: var(--green-deep);
+      color: rgba(246, 242, 231, 0.72);
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 3rem 0 2.5rem;
+    }
+    .site-footer .brand { color: var(--cream); }
+    .site-footer .brand span { color: var(--gold); }
+    .footer-tag { max-width: 22rem; margin-top: 0.75rem; }
+    .footer-col h4 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.9rem;
+    }
+    .footer-col ul { list-style: none; padding: 0; display: grid; gap: 0.55rem; }
+    .footer-col a {
+      color: rgba(246, 242, 231, 0.72);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .footer-col a:hover { color: var(--cream); }
+    .footer-bottom {
+      border-top: 1px solid rgba(246, 242, 231, 0.14);
+      padding: 1.25rem 0 2rem;
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+    /* Tablet and up */
+    @media (min-width: 640px) {
+      .hero { padding: 5.5rem 0 4.5rem; }
+      .btn { width: auto; }
+      .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+      .steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+      .step { flex-direction: column; }
+      .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+      .footer-bottom { flex-direction: row; justify-content: space-between; }
+      section { padding: 4.5rem 0; }
+    }
+
+    /* Desktop nav + pricing columns */
+    @media (min-width: 720px) {
+      .nav { display: flex; gap: 1.75rem; align-items: center; }
+    }
+    @media (min-width: 900px) {
+      .pricing-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+      .plan, .benefit { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+      .plan:hover, .benefit:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+      .cta-band { padding: 4rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#">Shelf<span>Sense</span></a>
+      <nav class="nav" aria-label="Main">
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a class="nav-cta" href="mailto:hello@shelfsense.app?subject=ShelfSense%20free%20trial&amp;body=Hi%20ShelfSense%2C%0A%0AMy%20store%3A%20%0ACity%3A%20%0ANumber%20of%20locations%3A%20%0A%0AThanks!">Start trial →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Headline -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="badge">🍅 Now piloting in 3 grocery shops in Milan</p>
+        <h1>Count your shelves with a <em>photo</em>, not a clipboard.</h1>
+        <p class="lede">
+          ShelfSense turns a quick walk down your aisles into a supplier-ready
+          reorder list — so you spend minutes on stock, not hours.
+        </p>
+        <a class="btn" href="mailto:hello@shelfsense.app?subject=ShelfSense%20free%20trial&amp;body=Hi%20ShelfSense%2C%0A%0AMy%20store%3A%20%0ACity%3A%20%0ANumber%20of%20locations%3A%20%0A%0AThanks!">
+          Start your free 14-day trial
+        </a>
+        <p class="micro">Free 14-day trial · No card required · $29/month per store after</p>
+      </div>
+    </section>
+
+    <!-- Three benefits -->
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Why owners switch</span>
+          <h2>What you get back</h2>
+          <p class="section-sub">Built for independent grocery stores and minimarkets with 1–3 locations.</p>
+        </div>
+        <div class="benefits-grid">
+          <article class="benefit">
+            <div class="icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </div>
+            <h3>Get 3+ hours back a week</h3>
+            <p>No paper counts, no keeping it all in your head. Walking your store with your phone is the whole job — pilot shops save about 3 hours a week.</p>
+          </article>
+          <article class="benefit">
+            <div class="icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+            </div>
+            <h3>Never run out of best sellers</h3>
+            <p>ShelfSense flags what's running low before it's gone, so the products your regulars come for are always on the shelf.</p>
+          </article>
+          <article class="benefit">
+            <div class="icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 20 4 20 4c0 0-1 14-9 16z"/><path d="M4 17c4-1 7.5-4.5 9.5-9.5"/></svg>
+            </div>
+            <h3>Throw away less fresh stock</h3>
+            <p>Order against what's actually on the shelf, not a guess — so less over-ordered fresh food ends up in the bin.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works: three steps -->
+    <section id="how">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">One photo, done</span>
+          <h2>How it works</h2>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="num" aria-hidden="true">1</span>
+            <div>
+              <h3>Snap a photo</h3>
+              <p>Walk your aisles like you always do and take a photo of each shelf with your phone.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="num" aria-hidden="true">2</span>
+            <div>
+              <h3>AI counts your shelf</h3>
+              <p>ShelfSense reads the photo, counts the products, and spots what's running low.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="num" aria-hidden="true">3</span>
+            <div>
+              <h3>Send the order</h3>
+              <p>You get a reorder list for each supplier — checked, sorted, and ready to send.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Pricing: three plans -->
+    <section id="pricing">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Pricing</span>
+          <h2>Simple pricing, per store.</h2>
+          <p class="section-sub">Every plan starts with a free 14-day trial on your own shelves. No card required.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="plan">
+            <h3>Single Store</h3>
+            <p class="plan-for">For one-location shops.</p>
+            <p class="price"><span class="amount">$29</span><span class="per">/store/mo</span></p>
+            <ul class="features">
+              <li>Unlimited shelf photos</li>
+              <li>Reorder lists, sorted by supplier</li>
+              <li>Works on any phone — no hardware</li>
+              <li>Email support</li>
+            </ul>
+            <a class="btn plan-btn" href="mailto:hello@shelfsense.app?subject=ShelfSense%20free%20trial&amp;body=Hi%20ShelfSense%2C%0A%0AMy%20store%3A%20%0ACity%3A%20%0ANumber%20of%20locations%3A%201%0A%0AThanks!">Start free trial</a>
+          </article>
+
+          <article class="plan popular">
+            <span class="popular-badge">Most popular</span>
+            <h3>Multi-Store</h3>
+            <p class="plan-for">For 2–3 locations.</p>
+            <p class="price"><span class="amount">$24</span><span class="per">/store/mo</span></p>
+            <ul class="features">
+              <li>Everything in Single Store</li>
+              <li>One dashboard across all locations</li>
+              <li>Per-store stock and reorder views</li>
+              <li>Priority support</li>
+            </ul>
+            <a class="btn plan-btn" href="mailto:hello@shelfsense.app?subject=ShelfSense%20free%20trial&amp;body=Hi%20ShelfSense%2C%0A%0AMy%20store%3A%20%0ACity%3A%20%0ANumber%20of%20locations%3A%202%2D3%0A%0AThanks!">Start free trial</a>
+          </article>
+
+          <article class="plan">
+            <h3>Growing Chain</h3>
+            <p class="plan-for">For 4+ locations and small groups.</p>
+            <p class="price"><span class="amount">Custom</span></p>
+            <ul class="features">
+              <li>Everything in Multi-Store</li>
+              <li>Onboarding for your team</li>
+              <li>Dedicated support &amp; invoicing</li>
+              <li>Volume pricing</li>
+            </ul>
+            <a class="btn plan-btn" href="mailto:hello@shelfsense.app?subject=ShelfSense%20%E2%80%94%20growing%20chain&amp;body=Hi%20ShelfSense%2C%0A%0AWe%20run%20multiple%20locations%20and%20would%20like%20to%20talk.%0A%0ALocations%3A%20%0ACity%3A%20%0A%0AThanks!">Talk to us</a>
+          </article>
+        </div>
+        <p class="pricing-note">Prices per store, billed monthly. Cancel anytime — your data stays yours.</p>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section>
+      <div class="wrap">
+        <div class="cta-band">
+          <h2>Ready to see it on your shelves?</h2>
+          <p>Try ShelfSense free for 14 days on your own store. If it doesn't save you hours, don't pay.</p>
+          <a class="btn" href="mailto:hello@shelfsense.app?subject=ShelfSense%20free%20trial&amp;body=Hi%20ShelfSense%2C%0A%0AMy%20store%3A%20%0ACity%3A%20%0ANumber%20of%20locations%3A%20%0A%0AThanks!">
+            Start your free trial
+          </a>
+          <p class="micro">It works on your own shelves before you pay a cent.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#">Shelf<span>Sense</span></a>
+          <p class="footer-tag">Shelf counting with a photo, for independent grocers. Piloting in Milan since September.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="mailto:hello@shelfsense.app?subject=ShelfSense%20free%20trial&amp;body=Hi%20ShelfSense%2C%0A%0AMy%20store%3A%20%0ACity%3A%20%0ANumber%20of%20locations%3A%20%0A%0AThanks!">Start free trial</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hello@shelfsense.app">hello@shelfsense.app</a></li>
+            <li>Milan, Italy</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ShelfSense. All rights reserved.</span>
+        <span>Made in Milan · <a href="mailto:hello@shelfsense.app">Get in touch</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

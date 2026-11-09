@@ -4,11 +4,11 @@ Nov 9, 2026 · @O
 
 ## At a glance
 
-A 60-minute lesson for entrepreneurship students: about 40 minutes of talk, then about 20 minutes of live, instructor-led demo and setup. The one message: **use AI for everything, verify everything, and point it at hard problems — or get left behind.**
+A 60-minute lesson for entrepreneurship students: about 40 minutes of talk, then about 20 minutes of recorded demo videos that you talk over. The one message: **use AI for everything, verify everything, and point it at hard problems — or get left behind.**
 
 - **Audience:** entrepreneurship students. No coding background assumed.
 - **They walk away with:** a picture of where work and markets are heading, a free AI setup on their own laptop, and one homework task.
-- **How the script is written:** word for word, in your voice. Lines in \[brackets\] are cues — slides, demos or a spot to drop in your own story. They are not spoken.
+- **How the script is written:** word for word, in your voice. Lines in [brackets] are cues — slides, demos or a spot to drop in your own story. They are not spoken.
 - **Facts are as of 9 Nov 2026.** Prices and free tiers change monthly, so check the fact sheet at the end the day before you teach.
 
 ## Lesson plan
@@ -23,75 +23,87 @@ The lesson moves from **why** (the world is changing), to **so what** (what it m
 | 4 | What AI means for entrepreneurs | 7 | 0:14 | "The bar went up. For everyone." | Smaller teams, too many products, more inequality, costly distribution. Random SaaS is dead. |
 | 5 | Where the opportunity is | 5 | 0:21 | "Go where it's hard" | Deep tech, plus companies whose know-how lives in people's heads. |
 | 6 | Use AI for everything, verify everything | 6 | 0:26 | Five icons: write, present, video, market and sell, code. Then "Trust, but verify." | AI does the first draft and you do the checking. |
-| 7 | Which AI to use and what it costs | 4 | 0:32 | A ladder of tools: free → cheap → expensive → local | Start free. Opus 5.5 is the one model worth paying for when you build decks, sites and video. Chinese models are the best value otherwise. Skip local for now. |
-| 8 | Live session: one agent, everything | 20 | 0:36 | "One agent. Five jobs." | Install, Markdown editing, decks, a live website on Cloudflare, video with Seedance 2.5. Opus 5.5 is the model for this. |
+| 7 | Which AI to use and what it costs | 4 | 0:32 | A ladder of tools: free → cheap → expensive → local | Start free. Opus 5.5 is the model worth paying for when a job is a long chain of steps, like a video pipeline. Chinese models are the best value otherwise. Skip local for now. |
+| 8 | Demo videos: one agent, everything | 20 | 0:36 | "One agent. Four jobs." | Eleven recorded chapters you talk over: install, Markdown, a deck, a website on Cloudflare, and video (local h3, then Seedance 2.5). All recorded on a free model. |
 | 9 | Close and homework | 4 | 0:56 | Three lines and the homework | Use it daily, starting tonight. |
 
 **Before the lesson**
 
 - [ ] Make the slides with AI (that's the point of the opening), then check every number against the fact sheet.
-- [ ] Do the full prep list at the top of Script 8 (Opus 5.5 connected, Cloudflare logged in, Higgsfield key set, video pre-rendered). Run the whole 20 minutes once end to end.
-- [ ] Take screenshots of every demo step as a backup in case the Wi-Fi dies.
-- [ ] Put the install commands on a slide or a QR code so students can copy them.
-- [ ] Ask students beforehand to bring a laptop with a Google account ready. They only need Cloudflare and Higgsfield accounts if they want to repeat the demos tonight. 
+- [ ] Ask students beforehand to bring a laptop with a Google account ready.  
 
 ## Script 1 — Opening: this lesson was made with AI (3 min)
 
-&#91;SLIDE: "Everything you're about to see was made with AI."\]
+[SLIDE: "AI for Entrepreneurs." Your photo, and a link to apiplant.com.]
 
-Good morning everyone. Before we start, a small confession.
+Good morning everyone!
+
+My name is Federico Rampazzo. I sell digital products on the internet, and I help companies automate their operations using generative AI. So today I'm not speaking as a researcher or a guru. I'm speaking as someone who uses these tools every single day, and who has watched them change how I work.
+
+[PAUSE. Let the room settle.]
+
+[SLIDE: "A small confession"]
+
+Before we start, a small confession.
 
 The slides you're about to see… I didn't make them. Not really. AI made them. The structure, a lot of the wording, the visuals. I checked everything, I fixed what was wrong, I changed what didn't sound like me. But the heavy lifting? AI did it.
 
 And they look pretty good, right? Clean. Consistent. No typos.
 
-A few years ago, if a startup walked into a pitch with a deck this polished, you'd think: OK, these people are serious. They have a designer. They have money. They've done the work.
+[ASK THE ROOM: "Quick show of hands. If a startup showed you a deck like this, how many of you would think: these people are serious?"]
+
+[Wait for hands.]
+
+[SLIDE: "Polish no longer proves quality"]
+
+Exactly. A few years ago that was a fair guess. A polished deck meant a designer, a budget, real work behind it.
 
 Today that signal is gone.
 
-Anyone can make an impeccable presentation in twenty minutes. An impeccable website. An impeccable pitch deck, an impeccable video. So a beautiful presentation tells you nothing anymore about the product behind it. Not mine, not anyone's.
+Anyone can make an impeccable presentation in twenty minutes. An impeccable website. An impeccable pitch, an impeccable video. In fact, in the last twenty minutes of today I'll show you a deck, a website and a video, each made in minutes by one tool. So a beautiful presentation tells you nothing anymore about the product behind it. Not mine, not anyone's.
 
-&#91;PAUSE\]
+[PAUSE]
 
 Keep that in mind today, and keep it in mind both ways. When you look at other people's work, look past the polish and ask what's underneath. And when you build your own stuff, remember that polish is now the minimum. It's not what makes you different anymore.
 
-&#91;SLIDE: "Use AI for everything — or get left behind."\]
+[SLIDE: "Use AI for everything — or get left behind."]
 
 So here's the one thing I want you to leave this room with. Use AI for everything, or you will be left behind.
 
 I'm not saying that because it's trendy. Honestly, I'm a bit tired of the hype myself. I'm saying it because the way everyone works is changing, and it's not changing back.
 
-In the next hour I'm going to do four things. First, what's happening to jobs. Second, whether this is all a bubble. Third, what it means for you as founders, the bad news and the good news. And fourth, we're going to set you up with free AI tools on your own laptops before you leave.
+Here's the plan for the hour. First, what's happening to jobs. Second, whether this is all a bubble. Third, what it means for you as founders, the bad news and the good news. And fourth, a set of demo videos where I show you what one AI tool can do, and that you can install on your own laptop tonight.
 
 Let's go.
 
 ## Script 2 — What's happening to work (6 min)
 
-&#91;SLIDE: "If you do it on a computer, AI can do it."\]
+[SLIDE: "If you do it on a computer, AI can do it."]
 
 Let's start with jobs, because that's what everyone's quietly worried about.
 
-Some office jobs are being replaced right now. Not in ten years. Now. Customer support, copywriting, translation, a lot of junior design, data entry, some junior coding roles. People who trained for years for a career are being pushed out of the industry they chose.
+Some office jobs are being replaced right now. Not in ten years. Now. Customer support, copywriting, translation, a lot of junior design, data entry, junior coding roles. People who trained for years for a career are being pushed out of the industry they chose.
 
-&#91;YOUR STORY: someone you know who lost work or changed career because of AI. One or two sentences is enough.\]
+Nobody hires juniors anymore, senior software engineers who didn't jump on the AI bandwagon find it increasingly harder to find a job.
 
 And here's the uncomfortable part. Those are just the first ones. Expect the rest of office work to be next.
 
 Think about what a normal office day actually is. Emails. Spreadsheets. Documents. Updating a CRM. Writing up meeting notes. Making a report for your boss. It's all text, numbers and clicks on a screen… and that's exactly what AI is good at. If you do it on a computer, AI can do it, or will be able to do it soon.
 
-&#91;SLIDE: "Robotics is the new gold rush."\]
+[SLIDE: "Robotics is the new gold rush."]
 
 Now, manual jobs. Plumbers, cleaners, warehouse workers, cooks. They have more time. AI can't hold a wrench… yet.
 
 But robotics is the new gold rush. Look at where the money is going right now. The vision models we already have can look at a room and understand what's in it. When those models run cheaply on a robot, manual jobs start getting automated too. Warehouses first, because they're controlled spaces, then everything else. That's not science fiction anymore. It's an engineering and cost problem, and engineering and cost problems get solved.
+Top talent in Silicon Valley is moving to Shenzhen and betting everything on robots.
 
-&#91;SLIDE: "Cheap work → cheap everything."\]
+[SLIDE: "Cheap work → cheap everything."]
 
 So what happens when both office and manual work get automated?
 
 Wages collapse. And prices of almost everything collapse too, because the biggest cost in most products and services is people's time. That might sound great as a consumer. Everything is cheaper! But if you're the one selling your time, or selling a product whose price is falling to zero, it's a very different story.
 
-&#91;SLIDE: "Right now: you + AI > AI alone."\]
+[SLIDE: "Right now: you + AI wins"]
 
 Which brings me to the most important idea of this section.
 
@@ -101,27 +113,32 @@ That window won't stay open forever. So the time to learn this isn't "after I gr
 
 ## Script 3 — Is it a bubble? (5 min)
 
-&#91;SLIDE: "Probably a bubble. Doesn't matter."\]
+[SLIDE: "Is it a bubble?"]
 
 Someone's thinking it, so let's talk about it. Isn't this all a bubble?
 
 My honest answer is yes, I think there's a bubble. And no, it doesn't change what you should do. Let me explain both halves.
 
+[SLIDE: "Intelligence has plateaued"]
+
 **Why I think there's a bubble.** For a few years, every new model from OpenAI and Anthropic was a big jump. You'd try it and go, wow, this is a different thing. That's not really what I see anymore. My read is that the raw intelligence of the top models has more or less peaked.
 
-So what are the labs doing instead? They're specialising. They're going in different directions: one goes deep on coding, another on consumer apps, voice and images, another on business agents. And a lot of the effort goes into making smaller, cheaper models almost as capable as the big ones.
+So what are the labs doing instead? They're specialising. They're going in different directions: one is much better at using 3D modelling software, another is really good at writing movie scripts for AI generated videos. Moreover smaller and cheaper models become smarter than yesterday's frontier models.
 
 That's great news for you and me as users. Cheaper and better. But it's bad news for valuations built on the story that intelligence keeps going up forever, and that whoever gets there first wins everything.
 
-&#91;SLIDE: "The gold rush is eating the hardware." Show: RAM prices up, Crucial shut down, no new Nvidia gaming GPUs in 2026.\]
+The transformer architecture which powers modern LLMs brought us to an impressive level of intelligence - and it's good enough to automate a big chunk of our work. But in order to completely replace human judgement we likely need groundbreaking research and more innovations. Scaling AI intelligence further may not be a process of predictably throwing more hardware like OpenAI and Anthropic want the investors to believe, it might be an unpredictable process which can yield results in one year or ten.
 
-Meanwhile, look at the money. Data centres are buying up so much memory that Micron, one of the three big memory makers, shut down Crucial, its consumer brand, to sell to AI companies instead. RAM for normal computers has roughly doubled in price. And 2026 is the first year in about three decades that Nvidia hasn't launched a new generation of consumer graphics cards. That's what a gold rush looks like.
+[SLIDE: "The gold rush is eating the hardware." Show: RAM prices up, Crucial shut down, no new Nvidia gaming GPU in 2026.]
 
-&#91;SLIDE: "Even if it bursts, AI stays." Logos or names: DeepSeek, GLM (Zhipu), Kimi, Qwen, MiniMax.\]
+Meanwhile, look at the money. Data centres are buying up so much memory that Micron, one of the three big memory makers, shut down Crucial, its consumer brand, to sell to AI companies instead. RAM for normal computers has gone up about five times: a 64GB kit that cost around 170 euros in mid-2025 is about 926 today. And 2026 is the first year in about three decades that Nvidia hasn't launched a new generation of consumer graphics cards. That's what a gold rush looks like.
+
+[SLIDE: "Even if it bursts, AI stays." Logos or names: DeepSeek, GLM (Zhipu), Kimi, Qwen MiniMax.]
 
 **Why it doesn't matter.** Imagine the worst case. The bubble bursts, and OpenAI and Anthropic disappear tomorrow morning. Gone.
 
-Does AI disappear? No. Because Chinese labs like DeepSeek, Zhipu with GLM, Moonshot with Kimi, Alibaba with Qwen and MiniMax keep releasing open models. Open means the model itself can be downloaded. Anyone can host it, run it, build on it. You can't un-invent that. It's out there, on thousands of servers, forever.
+Does AI disappear? No. Because Chinese labs like DeepSeek, Zhipu with GLM, Moonshot with Kimi, Alibaba with Qwen and MiniMax have already released open models which are close to frontier models and definitely good enough for most use cases. Open means the model itself can be downloaded and modified. Anyone can host it, run it, build on it. You can't un-invent that. It's out there, on thousands of servers, forever.
+
 
 So, bubble or no bubble, the way everyone works is going to shift towards more AI in everything. Every job, every company, every product.
 
@@ -129,39 +146,37 @@ And that leads to a really boring conclusion. It's not hype, it's just logic: if
 
 ## Script 4 — What AI means for entrepreneurs (7 min)
 
-&#91;SLIDE: "The bar went up. For everyone."\]
+[SLIDE: "The bar went up. For everyone."]
 
-OK. You're here because you want to build something. So what does all this mean for an entrepreneur?
+OK. So what does all this mean for an entrepreneur?
 
 I'll give you the bad news first, and I won't sugar-coat it. Then in the next section, the good news.
 
-&#91;SLIDE: "Smaller teams."\]
+[SLIDE: "Smaller teams."]
 
 **One: pressure for even smaller teams.** Where a startup needed ten people, investors now expect three. Where you needed three, they expect one founder with good AI tools. Lean is no longer a nice-to-have, it's the default.
 
-&#91;SLIDE: "Everyone can build → too much of everything."\]
+[SLIDE: "Everyone can build → too much of everything."]
 
 **Two: technical people are cheaper.** Building software used to be the hard, expensive part. AI now writes a lot of the code. So anyone can build, which means everyone does. The result is an oversupply in every sector. Every niche has ten apps, then fifty, then two hundred.
 
-&#91;SLIDE: "A few win big. Most earn nothing."\]
+[SLIDE: "A few win big. Most earn nothing."]
 
 **Three: more inequality.** When products are easy to copy and the internet lets the winner reach everyone, the winner takes most. A few people will earn far more than before. A lot more people won't earn anything from what they build.
 
-&#91;SLIDE: "Your inbox, every buyer's inbox."\]
+[SLIDE: "Every buyer's inbox"]
 
 **Four: buyers are drowning.** Talk to anyone who buys software for a company. They're flooded with sales emails for brand-new "vibe-coded" products. Vibe coding just means building something fast by prompting an AI, without really understanding the code. Every one of those emails is well written, and every one has a beautiful landing page. Remember the opening: polish means nothing now. So yours is one of hundreds that week.
 
 It's the same for consumers. There are infinite apps to choose from, so they're less likely to pick yours.
 
-&#91;SLIDE: "Distribution is the new bottleneck."\]
+[SLIDE: "Distribution is the new bottleneck."]
 
 **Five: marketing got brutal.** Results that were easy a few years ago, like getting your first hundred users or your first ten customers, now take a huge marketing budget and a huge amount of effort. Building is cheap. Getting noticed is expensive.
 
-&#91;YOUR STORY: a launch that would have worked a few years ago and didn't now, or what you see in your own inbox.\]
-
 **Six: the bar is raised for everything.** Your product, your pitch, your content, your customer support. Whatever was "good enough" before is now average, because average is what AI gives everyone for free.
 
-&#91;SLIDE: "Random SaaS? Not worth your time."\]
+[SLIDE: "Random SaaS? Not worth your time."]
 
 Put all that together and expect more competition in everything. So much that building a random SaaS isn't worth your time anymore. Another to-do app, another CRM for some niche, another thin wrapper around ChatGPT. Someone will build the same thing this weekend, and give it away for free.
 
@@ -169,31 +184,29 @@ That sounds depressing. But it isn't the end of the story.
 
 ## Script 5 — Where the opportunity is (5 min)
 
-&#91;SLIDE: "Go where it's hard."\]
+[SLIDE: "Go where it's hard."]
 
 Here's the good news. If easy things are now worthless, hard things are worth more than ever.
 
-**Deep tech and hard problems.** Think of problems where AI can't just spit out the answer in one go. Problems that need real domain knowledge, hardware, regulation, access to data nobody else has, or relationships with real people in a real industry. Energy. Biotech. Robotics. Manufacturing. Healthcare. Logistics. Nobody's going to clone those over a weekend with a prompt.
+**Deep tech and hard problems.** Think of problems where AI can't just spit out the answer in one go. Problems that need real domain knowledge and creative insight, hardware, regulation, access to data nobody else has, or relationships with real people in a real industry. Energy. Biotech. Robotics. Manufacturing. Healthcare. Logistics. Nobody's going to clone those over a weekend with a prompt. Yet!
 
 So if you're choosing what to work on, choose the hard problem. It's scarier, I know. But it's the only place left where competition isn't infinite.
 
-&#91;SLIDE: "Most companies run on knowledge in people's heads."\]
+[SLIDE: "Knowledge lives in people's heads"]
 
 **The second opportunity is less obvious, and I think it's the biggest one.**
 
 Most companies, especially traditional ones, don't have their processes written down. There's no manual for how things actually get done. The real knowledge lives in people's heads. Maria in accounting just knows which supplier always pays late. The warehouse manager knows the workaround for the broken system.
 
+Whenever I work with a company on automating one of their internal processes and I start user interviews I'm always shocked to see the level of disorganisation, the lack of a written down a SOP, a Standard Operating Procedure.
+
 You can't automate what isn't written down. So these companies will take forever to automate everything. Years of interviews, mapping, change management, people resisting.
 
-&#91;SLIDE: "Or they get replaced."\]
+[SLIDE: "Or they get replaced."]
 
 Or… they get replaced. By a lean startup that does the job of hundreds of people. A few of the best people from that industry, the ones who know how things really work, plus a couple of forward-deployed AI engineers. Forward-deployed just means engineers who sit inside the business, learn the work hands-on, and build the automation right there. Together they build an automated business from the ground up, without any of the old baggage.
 
-That lean startup could be you.
-
-&#91;ASK THE ROOM: "Think of a business you know really well. A family business, a summer job, your last internship. How much of how it runs lives only in someone's head? Turn to your neighbour and tell them in thirty seconds."\]
-
-&#91;WAIT 60 SECONDS, then take two or three answers.\]
+That lean startup could be you!
 
 That's your starting point. Pick an industry, learn how it really works, team up with the people who know it best, and build the AI-native version.
 
@@ -201,7 +214,7 @@ But to do that, you need to actually be good at using AI. So let's talk about ho
 
 ## Script 6 — Use AI for everything, verify everything (6 min)
 
-&#91;SLIDE: Five icons: Write · Present · Video · Market & sell · Code\]
+[SLIDE: "Use AI for everything" — Write · Present · Video · Market & sell · Code]
 
 When I say use AI for everything, I mean everything. Here's what that looks like day to day.
 
@@ -213,11 +226,23 @@ When I say use AI for everything, I mean everything. Here's what that looks like
 
 **Marketing and sales plans.** Customer personas. Competitor research. Positioning. Email sequences. Ten versions of an ad to test. Pricing ideas. Ask it to role-play your toughest customer and practise your sales pitch on it.
 
-**Coding.** Even if you've never written a line of code. Landing pages, prototypes, little automations that save you an hour a week. In twenty minutes I'll show you how to do it for free.
+**Coding.** Even if you've never written a line of code. Landing pages, prototypes, little automations that save you an hour a week. I'll show you how to do it at the end.
 
-&#91;YOUR STORY: one concrete thing you did with AI this month that would have taken you days before.\]
+[SLIDE: "My AI Software Factory"]
 
-&#91;SLIDE: "Trust, but verify."\]
+My background is in software engineering. Last month, I took generative AI inference engines that allow you to generate video, clone your voice, analyse your text and ported them from their official implementations to my favourite programming language.
+
+For each one of them my AI Software Factory independently:
+- Built the UI
+- Packaged it for every supported operating system
+- Ran automated tests
+- Benchmarked it against the official implementation, and improved it until it was faster
+- Wrote the documentation and launched the website following the style of my business
+
+At the end of the process, I tested the working software in-depth, I argued about some technical choices and got a few improvements in.
+Each porting was weeks of work of a very senior engineer, now it's a couple of hours.
+
+[SLIDE: "Trust, but verify."]
 
 Now the most important warning of the day. **AI is not infallible.**
 
@@ -225,7 +250,7 @@ It makes things up. We call it hallucinating. It'll invent a statistic, a quote,
 
 So here are my rules:
 
-&#91;SLIDE: the four rules\]
+[SLIDE: "The four rules"]
 
 - If it cites a source, open the source. Check it exists and actually says what the AI claims.
 - Check every number that matters.
@@ -236,255 +261,239 @@ A trick I use all the time: take what one AI gave you and ask a different one to
 
 The skill isn't typing prompts. The skill is judgement: knowing what good looks like and catching what's wrong. AI does the first draft. You're the editor.
 
+This is also why it's still important to be good at your job. AI just made you 10 times faster.
+
 ## Script 7 — Which AI to use and what it costs (4 min)
 
-&#91;SLIDE: the ladder below, one row at a time\]
+[SLIDE: "Which AI to use and what it costs" — the ladder below, one row at a time]
 
 | Step | What | Cost | Use it for |
 | --- | --- | --- | --- |
-| 1 | Gemini and ChatGPT, free plans | $0 | Everyday writing, research, ideas |
+| 1 | Gemini and ChatGPT, free plans | $0 | Everyday writing, research, ideas, image generation |
 | 2 | OpenCode with its free models | $0 | Coding and agents on your laptop |
 | 3 | Chinese models such as DeepSeek and GLM-5.3, pay per use | Cents to a few dollars | When you need more, on a budget |
-| 4 | Claude Pro or Max (Opus 5.5) | $20 to $200 a month | Decks, websites, video pipelines: the one model that is actually good at it |
+| 4 | Claude Pro or Max (Opus 5.5) | $20 to $200 a month | Long multi-step jobs such as video pipelines: expensive, but it has a quality edge on its rivals |
 | 5 | Local AI on your own hardware | Thousands, upfront | Not yet. Wait. |
 
 You don't need to spend money to start. Let me go up the ladder.
 
 **Step one: free.** Get a free Gemini account and a free ChatGPT account. Both of them. For most of what we just talked about, writing, research, ideas, marketing drafts, the free plans are good enough. A heads-up: the free plans use the smaller, lighter models, ChatGPT shows ads now, and by default your chats can be used for training. Go into the settings and turn that off if you care.
 
-**Step two: free coding.** OpenCode is an open-source coding agent. It comes with free models built in. Right now that includes GLM-5.3 Flash and DeepSeek V4.1 Flash, both from Chinese labs. The free list changes every few weeks, and some of the free models use your data to improve themselves, so don't paste anything confidential. We'll install it together in a few minutes.
+**Step two: free coding.** OpenCode is an open-source coding agent. It comes with free models built in. Right now that includes GLM-5.3 Flash and DeepSeek V4.1 Flash, both from Chinese labs. The free list changes every few weeks, and some of the free models use your data to improve themselves, so don't paste anything confidential. We'll see how to install it in a few minutes.
 
 **Step three: if you have to pay, pay for Chinese models.** This is where you get the most for your money. DeepSeek and Zhipu's GLM-5.3 cost a small fraction of the American top models. For GLM-5.3 it's about a dollar forty per million tokens in, and about four dollars forty per million tokens out. DeepSeek's fast model is cheaper still. A million tokens is roughly 750,000 words, about eight or nine novels. For a student or an early startup, a few dollars lasts a long time.
 
-One honest caveat: if you use their official apps, your data goes to servers in China. For anything sensitive, either don't send it, or use the same open models through a provider hosted somewhere else.
+One caveat: your data goes to servers in China. For anything sensitive, either don't send it, or use the same open models through a provider hosted somewhere else.
 
-**Step four: Claude Opus 5.5.** For everyday writing, free is fine. But for the serious build work I'm about to show you, decks, websites, video pipelines, Opus 5.5 is the only model I've found that's genuinely good. Pro is twenty dollars a month, and heavy use means Max at a hundred or two hundred. Worth it if you build every day. If you don't, steps one to three are better value.
+**Step four: Claude Opus 5.5.** For most tasks, any model will do. For the most complex coding tasks, or for video direction, Opus 5.5 has an edge over the other models. Pro is twenty dollars a month and Opus is quite token hungry, but if you switch between cheaper models and Opus you can get a lot of useful outputs in a month. OpenAI's models are more conservative in their token usage and they will last longer - but they don't match Opus performance in my opinion.
 
-**Step five: local AI.** Private, no monthly bill, but too expensive right now: RAM has roughly doubled and the shortage may last into 2027 or 2028. Don't buy hardware for AI yet.
+**Step five: local AI.** Private, no monthly bill, but too expensive right now: RAM is about five times what it was and the shortage may last into 2027-2028 or even 2030. Don't buy hardware for AI yet.
 
-## Script 8 — Live session: one agent, everything (20 min)
+## Script 8 — Demo videos: one agent, everything (20 min)
 
-This block is **instructor-led**. You drive on the projector, students watch and follow only at the marked "YOUR TURN" moments. The goal is not that everyone finishes every step. It is that everyone sees how far one coding assistant goes, and leaves with it installed.
+This block is **not a live demo**. It's a video you play and talk over. The slide "One agent. Four jobs." leads into a TV-style player: eleven screen recordings of me doing each job in OpenCode, one chapter after another. Nothing can crash on stage, and you talk over each recording. After most chapters a **"what was made" card** shows the real files the agent produced.
+
+**How to drive the player**
+
+- **⏎ or ↓** moves on: from a recording to its card, then to the next recording. **⌫ or ↑** goes back. **← / →** scrub the video, **space** pauses, and keys **1–9, 0** jump to a chapter.
+- A recording ends on its own and drops you on the card. Talk over the card, then press ⏎.
+- Chapters 10 and 11 (the two teasers) have no card. When the last one ends, ⏎ moves on to the thank-you slide.
 
 **Run of show**
 
-| Min | Clock | Block | Students do |
+| Min | Clock | Chapter (video length) | What's on screen |
 | --- | --- | --- | --- |
-| 3 | 0:36 | A. Install the agent | Install OpenCode, pick a free model |
-| 4 | 0:39 | B. Edit text in Markdown | Follow along with the email prompt |
-| 4 | 0:43 | C. Presentations | Watch |
-| 4 | 0:47 | D. Website, live on Cloudflare | Watch (build their own page tonight) |
-| 4 | 0:51 | E. Video with Higgsfield + Seedance 2.5 | Watch |
-| 1 | 0:55 | Wrap-up | Photograph the QR code |
+| 1 | 0:36 | Intro | Slide "One agent. Four jobs." |
+| 1 | 0:37 | **A. Install** (0:30) | Install, `startup.md`, pick GLM-5.3-Flash Free |
+| 3 | 0:38 | **B. Markdown** (0:44) | Rough notes → brief → LinkedIn post → price change |
+| 3 | 0:41 | **C. Deck** (0:17 + 0:15) | `deck.html`, then "Slide 3 has too much text" |
+| 3 | 0:44 | **D. Website** (0:39 + 0:23) | Landing page, premium pass, Cloudflare deploy |
+| 5 | 0:47 | **E. Video** (0:38 + 0:36 + 0:12 + 0:16 + 0:15) | Plan, generate with h3, stitch, then the Seedance 2.5 comparison |
+| 1 | 0:52 | Wrap-up | Slide "Thank you" |
 
-**Prep the day before (don't skip, this block is a live-demo minefield)**
+### Intro (1 min)
 
-- [ ] OpenCode installed and connected to **Claude Opus 5.5** on your laptop. Check `/models` shows it.
-- [ ] A project folder `demo/` with `startup.md`, an old `email.md` and an old LinkedIn post, so edits look real.
-- [ ] Cloudflare account created, and `npx wrangler login` already done. Do the first deploy once so the project name exists.
-- [ ] Higgsfield account with credits, API key stored in an environment variable (`HIGGSFIELD_KEY`), never typed or pasted on screen. Check the API docs URL for the current key format.
-- [ ] **Pre-render the video.** Generate two clips with Seedance 2.5 the day before. During class you start one live and show the finished one while it renders.
-- [ ] Screenshots of every step as a backup.
+[SLIDE: "Live: one agent, four jobs" — A–E chips on the left, a terminal on the right.]
 
-### Opening line (30 seconds)
+For the next twenty minutes I'm going to show you four jobs, done by one tool. First, a quick look at setting it up. Then the jobs: write and edit documents, make a presentation, build a website and put it on the internet, and make a video.
 
-&#91;SLIDE: "One agent. Five jobs."\]
+I recorded these in advance, because live demos break, and because I'd rather talk to you than watch a spinner. Everything you'll see is a real recording of me typing in the real tool, and I'll give you the files at the end.
 
-For the next twenty minutes I'm going to do five things with one tool, live. Write and edit documents. Make a presentation. Build a website and put it on the internet. Make a video. Same tool every time. You'll follow along for the first part, and for the rest I want you to just watch what's possible, because you'll do it yourselves tonight.
+And one detail that matters: **every recording you're about to see was done with a free model.** No credit card. You'll see the name on screen: GLM-5.3 Flash Free. Remember that when you see what comes out.
 
-One thing before we start, and I'll say it again at the end. **For this kind of work, Claude Opus 5.5 is the only model I've found that is genuinely good.** I'll explain why when we get to the video.
+[Press → to the TV slide. Chapter 1 starts on its own.]
 
-### A. Install the agent (3 min)
+### A. Install the agent (1 min) · video 0:30
 
-&#91;SLIDE: install commands + QR code to opencode.ai\]
+[VIDEO: 02-install. A terminal. The install command, `mkdir my-first-project`, a messy `startup.md`, then the model picker.]
 
-OpenCode is an open-source coding agent. It runs on your laptop and reads and writes files in one folder. You talk to it in plain English. It isn't just for programmers: for the next twenty minutes you won't see me write a line of code.
+Here's the tool. It's called OpenCode. It's an open-source coding agent: it runs on your laptop and reads and writes files in one folder. You talk to it in plain English. It isn't just for programmers. For the next twenty minutes you won't see me write a line of code.
 
-**YOUR TURN.** Laptops open.
+[While it plays, point at each step.]
 
-1. Go to opencode.ai and download the desktop app. Or on Mac and Linux paste this in the terminal:
+First, one line to install it. Then I make a folder, `my-first-project`, and put one file in it: my rough notes about a startup. This is a made-up idea, **ShelfSense**, an app for small grocery stores. The notes are messy on purpose. Lowercase, no structure, a typo. That's what real notes look like.
 
-```
-curl -fsSL https://opencode.ai/v2/install | bash
-```
+Last step: I type `/models` and pick **GLM-5.3 Flash Free**. That's it. We're set up.
 
-2. Make a new empty folder called `my-first-project` and open it in OpenCode. In the terminal: go into the folder and type `opencode`.
-3. Type `/models` and pick a free one (GLM-5.3 Flash Free or DeepSeek V4.1 Flash Free). If it asks for a provider, type `/connect`, choose OpenCode Zen, sign in and paste the key.
+[The video ends and the card shows: "Agent installed". Say:]
 
-&#91;WAIT until most hands are up. Walk round and help. Don't go past 3 minutes: late installers can catch up from the QR code.\]
+That's everything it took. No API key, no credit card, one folder.
 
-I'm on Opus 5.5, you're on a free model. For the writing parts you'll get similar results. For the later parts, you'll see the difference.
+Tonight, you can do the same install yourselves: opencode.ai, one command, a free model. Let's move on.
 
-### B. Edit text in Markdown (4 min)
+[Press ⏎ to start chapter B.]
 
-&#91;SLIDE: "Markdown: the language AI speaks."\]
+### B. Edit text in Markdown (3 min) · video 0:44
 
-Here's the single most useful trick of the day. **Write everything in Markdown.**
+[VIDEO: 03-markdown. Prompt "Read startup.md… rewrite it as a clear one-page brief", then edits, a LinkedIn post, and "I changed the price from $20 to $29".]
 
-Markdown is plain text with a few symbols. That's it. Because it's plain text, the AI reads and writes it perfectly, you can open it in any editor, and it turns into Word, PDF, web pages or slides in one step.
+Here's the single most useful trick of the day: **write everything in Markdown.** It's plain text with a few symbols. Because it's plain text, the AI reads and writes it perfectly, and it turns into Word, PDF, web pages or slides in one step.
 
-&#91;SLIDE: the cheat sheet, five lines\]
+[Play the video, talk over it.]
 
-```markdown
-# Big heading
-## Smaller heading
-**bold**  and  *italic*
-- a bullet
-1. a numbered step
-| Plan | Price |
-| --- | --- |
-| Pro | $20 |
-```
+Watch the first prompt. I ask it to read my rough notes and rewrite them as a one-page brief with five sections: Problem, Customer, Solution, Why now, Business model. And I tell it: keep my facts, don't invent numbers. That sentence is doing a lot of work. We'll come back to it.
 
-You don't need to memorise it. The AI writes the symbols. You just need to recognise them.
+Now the part that matters: **iteration.** I don't start over. I give it short instructions, one at a time. "Make it sound less like a consultant and more like a founder talking to a friend." Ten seconds, done.
 
-**Demo 1: a business document.** Show `startup.md` open on screen. Type:
+Then I ask for a LinkedIn post with a hook in the first line. It reads the same file and writes the post.
 
-> Read startup.md. It's a rough one-page description of my business. Rewrite it as a clear one-page brief with these sections: Problem, Customer, Solution, Why now, Business model. Keep my facts, don't invent numbers. Save it back to startup.md.
+And at the end, the move I love most. I type: **"I changed the price from $20 to $29. Update every file in this folder."** It finds the price in every file and changes it. One source of truth, many outputs.
 
-&#91;Let it run. Open the file side by side with the old version. Point out: headings, bullets, a table.\]
+[The card shows the old notes → new `startup.md` + `post-linkedin.md`. Say:]
 
-Now the part that matters: **iteration**. You don't rewrite from scratch, you edit in place, in the same file, with short instructions:
+On the left, my messy notes. In the middle, the brief. On the right, the post. And look at the price: twenty-nine dollars, everywhere. I didn't touch the files.
 
-> Shorten "Why now" to three bullets.
-> Make the whole thing sound less like a consultant and more like a founder talking to a friend.
-> Add a risks section. Be honest, give me the three that could actually kill this.
-> Now act as a sceptical investor and list five questions you'd ask. Don't change the file, just tell me.
+And now, notice what I do **not** do: I don't trust it blindly. When it says "14 owners, 9 would pay", I check that against my notes. Same numbers, nothing invented. That's the habit. Trust, but verify.
 
-Each one takes ten seconds. In ten minutes you'd have done what used to take an afternoon. And each time you read the result. Trust, but verify.
+[⏎ for chapter C.]
 
-**Demo 2: the same trick for social posts and emails.**
+### C. Presentations (3 min) · videos 0:17 + 0:15
 
-> Read startup.md. Write a LinkedIn post announcing the launch. Hook in the first line, under 150 words, no hashtags, no emojis. Save it as post-linkedin.md.
-
-> Now give me three alternative first lines so I can test them.
-
-> Write the first cold email to a potential customer. Four sentences, one ask. Save it as email-1.md. Then write a follow-up for a week later.
-
-&#91;SLIDE: "One source of truth → many outputs."\]
-
-This is the pattern. One `startup.md` is the single source of truth. Every post, email, one-pager and pitch comes from it. When your business changes, you change one file and ask the agent to update everything else:
-
-> I changed the price from $20 to $29. Update every file in this folder and tell me what you changed.
-
-**YOUR TURN (60 seconds).** Ask your agent: *"Write a three-sentence email introducing my startup idea to a friend, and save it as email.md."* Open the file. Ask for one edit: shorter, funnier, more formal.
-
-### C. Presentations (4 min)
-
-&#91;SLIDE: "A presentation is just a file."\]
+[VIDEO: 04-deck. Prompt to build a 10-slide deck as `deck.html` from `startup.md`.]
 
 Remember the opening: this lesson's slides were made with AI. Here's how.
 
-The key idea is that **everything the agent makes is an artifact: a file in your folder.** A deck, a page, a document. Because it's a file, the agent can open it, change just one part and save it. You never start over.
+The key idea: **everything the agent makes is a file in your folder.** A deck, a page, a document. Because it's a file, the agent can open it, change one part and save it. You never start over.
 
-Type:
+[While it plays:] One prompt: read `startup.md`, build a ten-slide pitch deck as one HTML file, arrow keys to move. That's all. A pitch deck from a page of notes, in about the time it takes me to say this sentence.
 
-> Read startup.md. Build a 10-slide pitch deck as a single HTML file called deck.html. One idea per slide. Large type, plenty of white space, a dark background with one accent colour. Arrow keys move between slides.
+[The card shows the first version, open on slide 3: wordy, with a small label "slide 3 · before".]
 
-&#91;Open deck.html in the browser. Press the arrow keys.\]
+This is the first version. It's decent. And it has a problem: slide 3 is a wall of text. Which is exactly what an AI deck looks like by default.
 
-Now manipulate it, one instruction at a time, like talking to a designer:
+[⏎ for 05-deck-iterate.]
 
-> Slide 3 has too much text. Cut it to one sentence and one big number.
-> Use a lighter palette and a serif font for headings.
-> Add a slide before the last one: "The ask". Pull the numbers from startup.md.
-> Add speaker notes to every slide, 30 seconds each.
+[VIDEO: 05-deck-iterate. Prompt: "Slide 3 has too much text. Cut it to one sentence and one big number."]
 
-To get a PDF, open the file in the browser and press **Ctrl/Cmd + P → Save as PDF**. You can also ask the agent for a PowerPoint file if someone insists.
+So I say it like I'd say it to a designer: "Slide 3 has too much text. Cut it to one sentence and one big number."
 
-&#91;SAY\] Notice what I didn't do. I didn't open PowerPoint, drag a box or pick a font. And notice the other thing: the first version is decent and the fifth is good. **The quality comes from the iteration, not the first prompt.**
+Look at what happens. It stops and asks me which number I mean, because there are two candidates. A good assistant asks. Then it makes the edit. You can see the diff: red lines out, green lines in.
 
-### D. A website, live on the internet (4 min)
+[The card shows "before → after" side by side: a paragraph becomes "3 hours saved per week" and one sentence.]
 
-&#91;SLIDE: "From idea to a public URL in five minutes."\]
+Before: a paragraph. After: one big number, **three hours**, and one sentence. That's a slide you'd actually show an investor.
 
-A static website is just files: HTML, CSS, images. There's no server and no database to run, which means it's fast, safe and nearly free to host. For a landing page or a portfolio that's all you need.
+The first version is decent. The second is good. **The quality comes from the iteration, not the first prompt.** And to get a PDF, you open it in the browser and press Ctrl or Cmd P.
 
-Type:
+[⏎.]
 
-> Build a one-page landing page for my startup from startup.md. Headline, three benefits, how it works in three steps, and an email signup button that goes to a mailto link for now. Mobile first. Put everything in a folder called site/.
+### D. A website, live on the internet (3 min) · videos 0:39 + 0:23
 
-&#91;Open site/index.html. Resize the window to show it on a phone.\]
+[VIDEO: 06-website. "Build a one-page landing page… Mobile first. Put everything in a folder called site/." Then "Make it feel more premium. Add a pricing section with three plans. Add a footer."]
 
-> Make it feel more premium. Add a pricing section with three plans. Add a footer.
+A website like this is just files: HTML, CSS, images. No server, no database. That means it's fast, safe and nearly free to host.
 
-Now publish. We use **Cloudflare Pages**: free hosting on Cloudflare's global network, with HTTPS included.
+[While it plays:] I ask for a landing page from the same `startup.md`: headline, three benefits, how it works in three steps, a signup button. Mobile first. It builds it, and it even tells me what it did, and one thing I should replace: the placeholder email address. Good assistants flag what they invented.
 
-&#91;SLIDE: the three publish steps\]
+Then the second prompt: "Make it feel more premium. Add a pricing section with three plans. Add a footer." Watch it change the fonts, the colours, and add the three pricing tiers.
 
-1. Create a free account at cloudflare.com (done in advance for the demo).
-2. Log in once from the terminal: `npx wrangler login`.
-3. Ask the agent to deploy:
+[The card shows `site/index.html` in a browser frame, plus a phone preview.]
 
-> Deploy the site/ folder to Cloudflare Pages with wrangler, project name my-startup. Give me the URL.
+Here's the result. Desktop on the left, phone on the right. Mobile first, three plans, a premium feel. This used to be a freelancer's week. Remember: polish is free now.
 
-Under the hood it runs this, so you can see there's no magic:
+[⏎ for 07-deploy.]
 
-```
-npx wrangler pages deploy site --project-name my-startup
-```
+[VIDEO: 07-deploy. "Deploy the site/ folder to Cloudflare Pages with wrangler, project name my-startup."]
 
-&#91;Open the URL on the projector. Show it on your phone. Optional: pull up the QR code so students open it.\]
+Now, publishing. We use **Cloudflare Pages**: free hosting on Cloudflare's global network, HTTPS included. I did the one-time login in advance. Then I just tell the agent: deploy the `site/` folder, project name `my-startup`, give me the URL.
 
-That's a live website with a real address, in about the time it took me to talk. Later you can attach your own domain in the Cloudflare dashboard, for about ten dollars a year.
+Under the hood it runs one command, `npx wrangler pages deploy`. No magic, you can see it.
 
-Change something? Tell the agent, run the same deploy, done.
+[The card shows the page in a frame with the URL `my-startup.pages.dev` and a green LIVE badge.]
 
-&#91;SAY\] This is also the answer to "where do I start?" for any idea in this room. A landing page that states the problem and collects emails costs nothing and tells you in a week whether anyone cares. Remember the warning from earlier though: polish is free, so what matters is what you do with the emails.
+And there it is. A real address, on the real internet. You could open it on your phone right now.
 
-### E. Video: Higgsfield and Seedance 2.5 (4 min)
+This is also the answer to "where do I start?" for any idea in this room. A landing page that states the problem and collects emails costs nothing and tells you in a week whether anyone cares. But remember the warning from earlier: polish is free, so what matters is what you do with the emails.
 
-&#91;SLIDE: "Video, written like code."\]
+[⏎.]
 
-Last one, and it's my favourite. Video used to need a camera, a crew and an editor. Now you can generate it from text.
+### E. Video (5 min) · five recordings, 1:57 in total
 
-&#91;SLIDE: the pipeline\]
+[VIDEO: 08-video-plan. "Read startup.md. Write a 15-second product teaser as 3 shots, 16:9. The man in me.png is the founder…" ]
 
-The pipeline is four steps, and the agent does all of them:
+Last one, and it's my favourite. Video used to need a camera, a crew and an editor. Now it needs a plan.
 
-1. **Script and shot list.** The agent turns `startup.md` into a 20-second script split into 4 or 5 shots.
-2. **Generate each shot.** The agent writes a small script that calls the **Higgsfield API** to generate every shot with **Seedance 2.5**, ByteDance's video model.
-3. **Download.** The script waits for each clip and downloads it.
-4. **Stitch.** It joins the clips and adds a soundtrack with ffmpeg, a free video tool.
+The pipeline is four steps, and the agent does all of them: **plan** the shots, **generate** each one, **download**, and **stitch** them together with ffmpeg, a free video tool.
 
-Seedance 2.5 on Higgsfield is more than text-to-video. According to Higgsfield's model catalogue it has four modes:
+[While it plays:] First the plan. And look at the prompt. I attach my own photo, `me.png`, as the founder, so he looks the same in every shot. For each shot I ask for a cinematic prompt, the exact line he says, and the exact on-screen text. And look at this line: "at most one or two words, because AI video often garbles text". That's a lesson I learned the hard way.
 
-- **Text to video:** describe the scene, get the clip. Up to 30 seconds, up to 1080p, with audio generated too.
-- **Omni reference:** give it your own images, video or audio so your product, character or voice stays consistent across shots.
-- **Video edit:** change an existing clip with a prompt.
-- **Video extension:** continue a clip forwards or backwards.
+It comes back with three shots: the problem, the magic, the payoff. I read it, and I change one shot: "In shot 2 he holds his phone up to a grocery shelf." I'm directing. It's writing.
 
-Type:
+[The card shows `startup.md` → `video-plan.md`.]
 
-> Read startup.md. Write a 15-second product teaser as 4 shots, vertical 9:16. For each shot write a cinematic prompt (camera, lighting, action). Save as video-plan.md. Don't generate anything yet.
+[⏎ for 09-video-generate.]
 
-&#91;Show the plan. Edit one shot live: "Make shot 2 a close-up on the founder's hands."\]
+[VIDEO: 09-video-generate. "A local h3 video server is running at http://127.0.0.1:8188… write gen.sh…"]
 
-Then, with the plan approved:
+Now generating. In this example we generate the video with **H3**, a model that runs on my own laptop, not with a cloud service. It's one of the video engines I ported, the ones from the Software Factory slide. At the end I'll send the exact same prompts to Seedance 2.5 and you'll see the quality difference. So the prompt says: a local server is running, read its spec, write a script `gen.sh` that sends one request per shot, five seconds, 720p, with `me.png` as the face.
 
-> Using the Higgsfield API, generate each shot with Seedance 2.5, 720p for the draft. Read my API key from the HIGGSFIELD_KEY environment variable. Download the clips into clips/ and stitch them with ffmpeg into teaser.mp4.
+Here the agent has to read an API spec, write a shell script, run it, wait for each request, which can take over ten minutes, and handle errors. That's twenty small steps, and it keeps the plan in its head. It's also why a script is better than clicking. You can run it again.
 
-&#91;Start the first clip. While it renders, play the pre-rendered teaser.\]
+[The card shows `me.png` in the middle with `shot1.mp4`, `shot2.mp4` and `shot3.mp4` around it, all playing.]
 
-Two practical notes. **It costs credits**, so always draft at low resolution and short length, and only render the final in 1080p once you like the plan. And **never paste your API key into the chat.** Put it in an environment variable and let the code read it from there.
+Three clips, one face. That's me, in a grocery store I've never been in.
 
-&#91;SLIDE: "Why Opus 5.5."\]
+[⏎ for 10-video-stitch.]
 
-Now, here's why I said Opus 5.5 at the start. A video pipeline isn't one prompt. It's twenty steps: read the API docs, write the code, handle the waiting, fix a failed request, check the clips, stitch them. The agent has to keep the whole plan in its head and recover from its own mistakes without you holding its hand.
+[VIDEO: 10-video-stitch. ffmpeg joins the clips into `teaser.mp4`.]
 
-**Opus 5.5 is the only model I've found that does this reliably.** The free and cheap models are fine for writing an email. They're not fine here: they lose the plan halfway, invent API parameters, or declare victory when the file is empty. Same story for a deck you want to look professional, or a website that deploys first time.
+Then the stitch: one command, three clips become one file, `teaser.mp4`. About ten seconds.
 
-So here's my honest advice, and it matches the ladder from earlier. Do the writing and learning on free models. When you want to build things like these, a deck, a site, a video, it's worth paying for the one model that is actually good at it. It's the one place where I'd spend the money.
+[⏎. The card shows the three clips stacking into the final teaser.]
+
+[VIDEO: 11-teaser. Title: "teaser.mp4 — generated locally with h3, my face from me.png". Captions: "Three hours a week, just counting shelves by hand." / "One photo. The reorder list writes itself." / "Your shelves, sorted — in seconds." / "Try it".]
+
+[PAUSE. Let it play for five seconds before you speak.]
+
+Here's the result.
+
+Fifteen seconds. Three shots. A founder with my face, a line of dialogue, and the app name on the phone, all spelled right. Generated with H3 on my own laptop, for free. Is it perfect? No. His hands aren't perfect, and the store looks a bit generic. But a year ago this was a film crew. Keep this version in your head, because now I'll show you the same thing with a better model.
+
+[⏎ for 12-teaser-seedance.]
+
+[VIDEO: 12-teaser-seedance. Title: "same prompts on Higgsfield · Seedance 2.5 (cloud)".]
+
+And now the same three prompts, the exact same text, sent to **Seedance 2.5** on Higgsfield, ByteDance's model in the cloud. We're not changing anything except the model.
+
+[Let it play. Then:]
+
+Same plan. Same lines. Better quality. Look at the lighting, the face, the shelves, how real the store feels. That's the gap between a free local model and a top cloud model. This is the one that costs credits, so draft cheap and short first, and render the final only when the plan is right. And never paste an API key into the chat: put it in an environment variable and let the code read it.
+
+[If asked what Seedance can do: text-to-video, **omni reference** (your own images, video or audio), video edit and video extension, up to 30 seconds at up to 1080p with audio, per Higgsfield's model catalogue.]
+
+[SAY, then ⏎ to the thank-you slide.] One more thing about the model. Everything you just saw ran on the free model. For writing, decks and a landing page, that's more than good enough. Where it gets harder is long chains: twenty steps, an API you've never seen, a failed request halfway. That's where I switch to Claude Opus 5.5, which holds a long plan together better than anything else I've tried. Start free, and pay only when you hit that wall.
 
 ### Wrap-up (1 min)
 
-&#91;SLIDE: "Five jobs, one agent." Markdown · Decks · Websites · Video · all on your own laptop.\]
+[SLIDE: "Thank you." Questions? Let's build something. The link ai-slides.apiplant.com.]
 
-Same tool, five jobs. Notice the pattern: you give it context, it makes a file, you ask for one change at a time, and you check everything. Tonight, pick one of the five and do it for your own idea. That's the homework.
+Same tool, four jobs: write Markdown, make a deck, publish a website, make a video. And it took one install to get there. Notice the pattern: you give it context, it makes a file, you ask for one change at a time, and you check everything.
+
+The link on screen has everything: this lesson, all the recordings and `my-first-project.zip`, the real files from the demo. Take a photo of the link. Tonight, pick one of the four and do it for your own idea. That's the homework.
 
 ## Script 9 — Close and homework (4 min)
 
-&#91;SLIDE: three lines\]
+[SLIDE: "Three things to remember" — three cards, one per point.]
 
 Let's wrap up. If you remember nothing else from today, remember three things.
 
@@ -494,15 +503,15 @@ Let's wrap up. If you remember nothing else from today, remember three things.
 
 **Three. Use AI for everything, and verify everything.** It does the first draft. You bring the judgement.
 
-&#91;SLIDE: "Homework — this week"\]
+[SLIDE: "Homework — this week" — three items.]
 
 Your homework for this week:
 
-1. Get a free Gemini account and a free ChatGPT account, if you don't already have them. Install OpenCode if you didn't finish today. If you want to go further, try Hermes Agent (see the fact sheet).
-2. Pick one of the five jobs from today: a Markdown business doc, a pitch deck, a landing page on Cloudflare, or a short video. Do it for your own idea with AI. Then fact-check every claim and every number, and write down what it got wrong.
-3. Write down one industry you know where the know-how lives in people's heads. One paragraph: what the work is, who knows it, and what an AI-native version could look like. Bring it to the next class.
+1. Get a free Gemini account and a free ChatGPT account, if you don't already have them. Install OpenCode if you haven't yet. If you want to go further, try Hermes Agent (see the fact sheet).
+2. Pick one of the four jobs from today: a Markdown business doc, a pitch deck, a landing page on Cloudflare, or a short video. Do it for your own idea with AI. Then fact-check every claim and every number, and see what the AI got wrong.
+3. Pick one industry where the know-how lives in people's heads. Use AI as a sounding board: ask it how the work really gets done, who knows what, and what an AI-native version of that business could look like.
 
-&#91;SLIDE: "Start tonight."\]
+
 
 Last thought. The people who'll do well in the next few years aren't the ones who know the most about AI. They're the ones who use it every single day, and who still think for themselves.
 
